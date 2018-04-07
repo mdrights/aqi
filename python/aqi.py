@@ -1,7 +1,8 @@
 #!/usr/bin/python
 # coding=utf-8
 # "DATASHEET": http://cl.ly/ekot
-# https://gist.github.com/kadamski/92653913a53baf9dd1a8
+# Modified by MDrights, at Apr 07, 2018.
+
 from __future__ import print_function
 import serial, struct, sys, time, json
 
@@ -120,7 +121,7 @@ if __name__ == "__main__":
         with open('/var/www/html/aqi.json', 'w') as outfile:
             json.dump(data, outfile)
 
-        print("Going to sleep for 5min...")
+        print("Going to sleep for 1 hour...")
         cmd_set_mode(0);
         cmd_set_sleep()
-        time.sleep(300)
+        time.sleep(3600)
